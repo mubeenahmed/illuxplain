@@ -1,4 +1,3 @@
-# illuxplain
+The OpenShift `jbossas` cartridge documentation can be found at:
 
-
-# Website For Applications, Blogs, and Article
+http://openshift.github.io/documentation/oo_cartridge_guide.html#jbossas
