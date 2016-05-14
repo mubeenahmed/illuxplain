@@ -11,19 +11,19 @@ public class VistorInfo {
 	private PreparedStatement ps;
 	
 	public void storeVistor(String visit){
-		DatabaseConfiguration configuration = new DatabaseConfiguration();
-		Connection connection = configuration.getConnection();
-		try {
-			ps = connection.prepareStatement(sql);
-			ps.setString(1, visit);
+		//DatabaseConfiguration configuration = new DatabaseConfiguration();
+		//Connection connection = configuration.getConnection();
+		//try {
+		//	ps = connection.prepareStatement(sql);
+		//	ps.setString(1, visit);
 			
-			ps.execute();
-			configuration.closeConnection();
+		//	ps.execute();
+		//	configuration.closeConnection();
 			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			configuration.closeConnection();
-		}
+		//} catch (SQLException e) {
+		//	e.printStackTrace();
+		//	configuration.closeConnection();
+		//}
 	}
 	
 }

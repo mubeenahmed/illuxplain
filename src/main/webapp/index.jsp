@@ -1,5 +1,8 @@
 
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html lang="en">
 
 <head>
@@ -11,14 +14,14 @@
     <meta name="author" content="">
 
     <title>Illuxplain - App </title>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.js"></script>
+    <script src="<c:url value = "/js/bootstrap.js" />" ></script>
+    <script src="<c:url value = "/js/bootstrap.min.js" />"></script>
+    <script src="<c:url value = "/js/jquery.js" />"></script>
     <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value ="/css/bootstrap.min.css" />" rel="stylesheet">
 	
     <!-- Custom CSS -->
-    <link href="/css/blog-post.css" rel="stylesheet">
+    <link href="<c:url value ="/css/blog-post.css" />" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

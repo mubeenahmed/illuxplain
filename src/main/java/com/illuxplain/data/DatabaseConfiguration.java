@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class DatabaseConfiguration {
 	//jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/burgerjoint
 	private Connection connection;
-	private static final String username = "adminiXBfa48";
-	private static final String password = "ZcinB3q5DkUz";
+	private static final String username = "adminR5nMvhl";
+	private static final String password = "yD_7aXK4uBtg";
 	private static final String host =  System.getenv("OPENSHIFT_MYSQL_DB_HOST");
 	private static final String port =  System.getenv("OPENSHIFT_MYSQL_DB_PORT");
 	private static final String URL = "jdbc:mysql://"+host+":"+port+"/illuxplain";
