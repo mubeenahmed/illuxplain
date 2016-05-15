@@ -14,6 +14,7 @@ import com.illuxplain.comment.controllers.Comment;
 public class CommentPersistence {
 	
 	public boolean saveComment(Comment comment){
+		System.out.println("###############LOGGING DATA################");
 		Comment newComment = comment;
 		CommentsInt comments = new Comments(comment.getComment(), comment.getName());
 		boolean result = comments.saveComment();
@@ -48,6 +49,7 @@ public class CommentPersistence {
 	}
 	
 	private List<Comment> presistentComment() throws SQLException{
+		System.out.println("###############LOGGING DATA################");
 		Connection connection = DatabaseConfiguration.getConnection();
 		String sql = "SELECT * FROM illuxplain.comments";
 		
