@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConfiguration {
 	//jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/burgerjoint
-	private Connection connection;
+	private static Connection connection;
 	private static final String username = "adminR5nMvhl";
 	private static final String password = "yD_7aXK4uBtg";
 	private static final String host =  System.getenv("OPENSHIFT_MYSQL_DB_HOST");
@@ -14,7 +14,7 @@ public class DatabaseConfiguration {
 	private static final String URL = "jdbc:mysql://"+host+":"+port+"/illuxplain";
 	
 	
-	public Connection getConnection(){
+	public static Connection getConnection(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(URL,username,password);
@@ -25,7 +25,7 @@ public class DatabaseConfiguration {
 		}
 		return connection;
 	}
-	public void closeConnection(){
+	public static void closeConnection(){
 		try {
 			connection.close();
 		} catch (SQLException e) {
