@@ -114,7 +114,7 @@
 				<!-- Comments Form -->
 				<div class="well">
 					<h4>Leave a Comment:</h4>
-					<form role="form" action="/" method="POST"
+					<form role="form" action="/illuxplain/" method="POST"
 						name="comment">
 						<input class="form-control" name="name" placeholder="name" />
 						<textarea class="form-control" rows="3" name="comment"></textarea>
