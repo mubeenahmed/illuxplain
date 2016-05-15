@@ -11,8 +11,8 @@ public class DatabaseConfiguration {
 	private static final String password = "yD_7aXK4uBtg";
 	private static final String host =  System.getenv("OPENSHIFT_MYSQL_DB_HOST");
 	private static final String port =  System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-	private static final String URL = "jdbc:mysql://"+host+":"+port+"/illuxplain";
-	//private static final String URL = "jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/illuxplain";
+	//private static final String URL = "jdbc:mysql://"+host+":"+port+"/illuxplain";
+	private static final String URL = "jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/illuxplain";
 	
 	public static Connection getConnection(){
 		try {
