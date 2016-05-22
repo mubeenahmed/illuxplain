@@ -1,10 +1,10 @@
-package com.illuxplain.data;
+package com.illuxplain.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConfiguration {
+public class MySqlDatabaseConfigurations {
 	//jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/burgerjoint
 	private static Connection connection;
 	private static final String username = "adminR5nMvhl";

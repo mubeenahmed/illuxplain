@@ -2,7 +2,7 @@ package com.illuxplain.repository;
 
 import java.util.List;
 
-import com.illuxplain.comment.Comments;
+import com.illuxplain.app.Comments;
 
 public class CommentRepositoryImp extends RepositoryImp<Comments> implements CommentRepository {
 
@@ -28,8 +28,8 @@ public class CommentRepositoryImp extends RepositoryImp<Comments> implements Com
 
 	@Override
 	public List<Comments> getComment(Comments comment) {
-		//read(, params);
-		return null;
+		String selectQuery = "SELECT * FROM illuxplain.comments";
+		return read(selectQuery,null);
 	}
 
 }
