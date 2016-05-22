@@ -11,30 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.illuxplain.data.CommentPersistence;
+import com.illuxplain.app.Comments;
+
 
 @Controller
 public class CommentController {
 	
 	@RequestMapping(value={"/"}, method = RequestMethod.POST)
-	public ModelAndView addComment(@ModelAttribute Comment comment, Model model){
-		CommentPersistence commentPersistence = new CommentPersistence();
-		boolean result = commentPersistence.saveComment(comment);
-		//model.addAttribute("comment",comment);
-		ModelAndView modelAndView = new ModelAndView("index");
-		return modelAndView;
-		//return model;
+	public ModelAndView addComment(@ModelAttribute Comments comment, Model model){
+		return null;
 	}
 	
 	
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public ModelAndView addComment(Model model){
-		CommentPersistence commentPersistence = new CommentPersistence();
-		List<Comment> listOfComment = commentPersistence.getComments();
-		model.addAttribute("comment",listOfComment);
-		ModelAndView modelAndView = new ModelAndView("index");
-		
-		return modelAndView;
+		return null;
 	}
 	
 	

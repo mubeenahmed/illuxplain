@@ -2,7 +2,7 @@ package com.illuxplain.repository;
 
 import java.util.List;
 
-import com.illuxplain.comment.Comments;
+import com.illuxplain.app.Comments;
 
 public interface CommentRepository {
 

@@ -1,4 +1,4 @@
-package com.illuxplain.comment;
+package com.illuxplain.app;
 
 public interface CommentsInt {
 
