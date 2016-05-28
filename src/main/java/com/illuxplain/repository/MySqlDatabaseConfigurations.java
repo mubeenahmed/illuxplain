@@ -16,22 +16,13 @@ public class MySqlDatabaseConfigurations {
 	//private static final String URL = "jdbc:mysql://127.0.0.1:3307/illuxplain";
 
 	
-	public static Connection getConnection(){
-		try {
+	public static Connection getConnection() throws SQLException, ClassNotFoundException{
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(URL,username,password);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return connection;
+		
+			return connection;
 	}
-	public static void closeConnection(){
-		try {
+	public static void closeConnection() throws SQLException{
 			connection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 }

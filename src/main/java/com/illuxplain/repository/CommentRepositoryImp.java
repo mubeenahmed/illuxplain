@@ -13,11 +13,6 @@ public class CommentRepositoryImp extends RepositoryImp<Comments> implements Com
 	}
 
 	@Override
-	public void addComment(Comments comment) {
-		
-	}
-
-	@Override
 	public void removeComment(Comments coment) {
 		
 	}
@@ -28,9 +23,16 @@ public class CommentRepositoryImp extends RepositoryImp<Comments> implements Com
 	}
 
 	@Override
-	public List<Comments> getComment(String pageID) throws SQLException {
+	public List<Comments> getComment(String pageID) throws SQLException, ClassNotFoundException {
 		String[] page = {pageID};
 		return read("",page);
+	}
+
+
+	@Override
+	public boolean addComment(Comments comment) throws ClassNotFoundException, SQLException {
+		Object[] tempComment = {comment};
+		return update("", tempComment);
 	}
 
 }

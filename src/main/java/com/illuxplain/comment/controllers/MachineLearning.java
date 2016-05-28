@@ -22,6 +22,8 @@ public class MachineLearning {
 			comments = commentApplication.getAllComments();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 		
 		ModelAndView modelAndView = new ModelAndView("machine-learning");

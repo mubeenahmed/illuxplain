@@ -22,6 +22,8 @@ public class Illxuplain {
 			comments = commentApplication.getAllComments();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 		
 		ModelAndView modelAndView = new ModelAndView("illuxplain");

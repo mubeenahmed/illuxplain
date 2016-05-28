@@ -12,13 +12,13 @@ public class RepositoryImp<T> implements IRepository<T> {
 	}
 	
 	@Override
-	public List<T> read(String query, Object[] params) throws SQLException {
+	public List<T> read(String query, Object[] params) throws SQLException, ClassNotFoundException {
 		return presistence.read(query, params);
 	}
 
 	@Override
-	public boolean update(String query, Object[] params) {
-		return presistence.update(query, params);
+	public boolean update(String query, Object[] params) throws ClassNotFoundException, SQLException {
+		return presistence.save(query, params);
 	}
 
 }

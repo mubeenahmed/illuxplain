@@ -7,8 +7,8 @@ import com.illuxplain.app.Comments;
 
 public interface CommentRepository {
 
-	public void addComment(Comments comment);
+	public boolean addComment(Comments comment) throws ClassNotFoundException, SQLException;
 	public void removeComment(Comments coment);
 	public void updateComment(Comments comment);
-	public List<Comments> getComment(String pageID) throws SQLException;
+	public List<Comments> getComment(String pageID) throws SQLException, ClassNotFoundException;
 }
