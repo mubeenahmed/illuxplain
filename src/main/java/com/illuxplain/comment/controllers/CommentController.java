@@ -17,13 +17,14 @@ import com.illuxplain.app.Comments;
 @Controller
 public class CommentController {
 	
-	@RequestMapping(value={"/"}, method = RequestMethod.POST)
+	@RequestMapping(value={"/comment"}, method = RequestMethod.POST)
 	public ModelAndView addComment(@ModelAttribute Comments comment, Model model){
+		
 		return null;
 	}
 	
 	
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/comment", method = RequestMethod.GET)
 	public ModelAndView addComment(Model model){
 		return null;
 	}

@@ -1,5 +1,6 @@
 package com.illuxplain.repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class RepositoryImp<T> implements IRepository<T> {
@@ -11,7 +12,7 @@ public class RepositoryImp<T> implements IRepository<T> {
 	}
 	
 	@Override
-	public List<T> read(String query, Object[] params) {
+	public List<T> read(String query, Object[] params) throws SQLException {
 		return presistence.read(query, params);
 	}
 
