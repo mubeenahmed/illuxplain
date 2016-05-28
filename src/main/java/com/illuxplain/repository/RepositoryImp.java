@@ -1,5 +1,6 @@
 package com.illuxplain.repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class RepositoryImp<T> implements IRepository<T> {
@@ -11,13 +12,13 @@ public class RepositoryImp<T> implements IRepository<T> {
 	}
 	
 	@Override
-	public List<T> read(String query, Object[] params) {
+	public List<T> read(String query, Object[] params) throws SQLException, ClassNotFoundException {
 		return presistence.read(query, params);
 	}
 
 	@Override
-	public boolean update(String query, Object[] params) {
-		return presistence.update(query, params);
+	public boolean update(String query, Object[] params) throws ClassNotFoundException, SQLException {
+		return presistence.save(query, params);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.illuxplain.repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.illuxplain.app.Comments;
@@ -9,11 +10,6 @@ public class CommentRepositoryImp extends RepositoryImp<Comments> implements Com
 	
 	public CommentRepositoryImp(PresistenceRepository newPresistence) {
 		super(newPresistence);
-	}
-
-	@Override
-	public void addComment(Comments comment) {
-		
 	}
 
 	@Override
@@ -27,9 +23,16 @@ public class CommentRepositoryImp extends RepositoryImp<Comments> implements Com
 	}
 
 	@Override
-	public List<Comments> getComment(Comments comment) {
-		String selectQuery = "SELECT * FROM illuxplain.comments";
-		return read(selectQuery,null);
+	public List<Comments> getComment(String pageID) throws SQLException, ClassNotFoundException {
+		String[] page = {pageID};
+		return read("",page);
+	}
+
+
+	@Override
+	public boolean addComment(Comments comment) throws ClassNotFoundException, SQLException {
+		Object[] tempComment = {comment};
+		return update("", tempComment);
 	}
 
 }
