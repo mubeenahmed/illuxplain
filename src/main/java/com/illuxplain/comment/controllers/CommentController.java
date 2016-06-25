@@ -16,7 +16,7 @@ public class CommentController {
 	public String submitHomeComment(@ModelAttribute Comments comment){
 		String commentText = comment.getCommentText();
 		String commentorName = comment.getNameOfCommentor();
-		System.out.println("######################################### "+commentText);
+		
 		return "OK";
 	}	
 

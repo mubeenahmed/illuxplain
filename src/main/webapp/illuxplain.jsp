@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 
@@ -20,8 +22,9 @@
 
 	<div id="video">
 		<video width="650" height="600" controls>
-			<source src="/resources/static/videos/final.mp4" type="video/mp4">
-			<source src="/resources/static/videos/final.ogg" type="video/ogg">
+			<source src="<c:url value="/resources/videos/final.mp4" />" type="video/mp4">
+			<%-- <source src="<c:url value="/resources/videos/final.ogg" />" type="video/ogg">  --%>
+			
 			Your browser does not support HTML5 video.
 		</video>
 		<div>

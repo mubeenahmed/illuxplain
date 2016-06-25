@@ -36,6 +36,7 @@ public class CommentApplication {
 			return false;
 		}
 	}
+	
 	private boolean saveValidateComment(Comments comment) throws ClassNotFoundException, SQLException{
 		CommentRepository commentRepository = new CommentRepositoryImp(new MySqlCommentPresistence());
 		commentRepository.addComment(comment);
