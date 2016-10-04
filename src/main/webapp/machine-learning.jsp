@@ -11,18 +11,15 @@
 
     <title>Illuxplain - About Machine Learning Algorithms</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/blog-post.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="<c:url value = "/resources/js/bootstrap.js" />"></script>
+	<script src="<c:url value = "/resources/js/bootstrap.min.js" />"></script>
+	<script src="<c:url value = "/resources/js/jquery.js" />"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="<c:url value= "/resources/js/comment-submitter.js" />" /> </script>
+	
+<%-- 	<link href="<c:url value ="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="<c:url value ="/resources/css/blog-post.css" />" rel="stylesheet"> --%>
 
 </head>
 
@@ -63,7 +60,7 @@
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
+        <div class="navbar-header">
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
@@ -119,16 +116,25 @@
 
                 <!-- Blog Comments -->
 
-                <!-- Comments Form -->
                 <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+					<h4>Leave a Comment:</h4>
+					<form id="myForm" method="POST">
+						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
+						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
+						<input type="submit" class="btn btn-primary" value="submit" />
+						<input type="hidden" value="illux-1" name="pageID" />
+					</form>
+				</div>
+				<div class="media-body">
+						<c:forEach items="${commentList}" var="comment">
+						<div class="media">
+							<h4 class="media-heading">
+								<small>${comment.comment_name}</small>
+							</h4>
+							<b>Comment</b> :<p>${comment.comment_text}</p>
+						</div>	
+						</c:forEach>
+				</div>
 
                 <hr>
 

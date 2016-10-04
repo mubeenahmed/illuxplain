@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.illuxplain.app.Comments;
-import com.illuxplain.repository.CommentRepository;
-import com.illuxplain.repository.CommentRepositoryImp;
 import com.illuxplain.repository.MySqlCommentPresistence;
 
 import junit.framework.TestCase;

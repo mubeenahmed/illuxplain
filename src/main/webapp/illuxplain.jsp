@@ -5,6 +5,18 @@
 
 
 <head>
+<script src="<c:url value = "/resources/js/bootstrap.js" />"></script>
+<script src="<c:url value = "/resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value = "/resources/js/jquery.js" />"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="<c:url value= "/resources/js/comment-submitter.js" />" /> </script>
+
+
+
+<link href="<c:url value ="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="<c:url value ="/resources/css/blog-post.css" />" rel="stylesheet">
+
 <title>Illuxplain Android Application</title>
 </head>
 
@@ -55,5 +67,26 @@
 			<p>As to access database, application also had webservices that
 				provide the application with extra functionality, such as user can
 				create profile, set profile pictures.</p>
+				
+				<!-- Comments Form -->
+				<div class="well">
+					<h4>Leave a Comment:</h4>
+					<form id="myForm" method="POST">
+						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
+						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
+						<input type="submit" class="btn btn-primary" value="submit" />
+						<input type="hidden" value="illux-1" name="pageID" />
+					</form>
+				</div>
+				<div class="media-body">
+						<c:forEach items="${commentList}" var="comment">
+						<div class="media">
+							<h4 class="media-heading">
+								<small>${comment.comment_name}</small>
+							</h4>
+							<b>Comment</b> :<p>${comment.comment_text}</p>
+						</div>	
+						</c:forEach>
+				</div>
 </body>
 </html>

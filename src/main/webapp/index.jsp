@@ -16,6 +16,10 @@
 <script src="<c:url value = "/resources/js/bootstrap.js" />"></script>
 <script src="<c:url value = "/resources/js/bootstrap.min.js" />"></script>
 <script src="<c:url value = "/resources/js/jquery.js" />"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="<c:url value= "/resources/js/comment-submitter.js" />" /> </script>
+
+
 
 <link href="<c:url value ="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <!-- Custom CSS -->
@@ -103,10 +107,11 @@
 				<!-- Comments Form -->
 				<div class="well">
 					<h4>Leave a Comment:</h4>
-					<form id="myForm" action="" method="POST" name="comment">
-						<input class="form-control" name="name" placeholder="name" required="required"/>
-						<textarea class="form-control" rows="3" name="comment" required="required"></textarea>
+					<form id="myForm" method="POST">
+						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
+						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
 						<input type="submit" class="btn btn-primary" value="submit" />
+						<input type="hidden" value="wel-1" name="pageID" />
 					</form>
 				</div>
 
@@ -126,12 +131,13 @@
                        
                     </div> -->
 					<div class="media-body">
-						<c:forEach items="${comment}" var="comment">
+						<c:forEach items="${commentList}" var="comment">
+						<div class="media">
 							<h4 class="media-heading">
-								<small>${comment.name}</small>
+								<small>${comment.comment_name}</small>
 							</h4>
-							<p>${comment.comment}</p>
-							
+							<b>Comment</b> :<p>${comment.comment_text}</p>
+						</div>	
 						</c:forEach>
 					</div>
 				</div>
