@@ -49,13 +49,16 @@ public class CommentController {
 		String commentText = comments.getCommentText();
 		String commentorName = comments.getNameOfCommentor();
 		String pageId = comments.getPageID();
-		
-		GeneratingDataUtils generatingForUnixTimeStamp = new GeneratingDataUtils();
-		long created = generatingForUnixTimeStamp.getUnixTime();
+		long created = createdTime();
 		
 		Object[] params = new Object[]{ commentText, commentorName, pageId, created};
-		
 		return params;
+	}
+	
+	private long createdTime(){
+		GeneratingDataUtils generatingForUnixTimeStamp = new GeneratingDataUtils();
+		long created = generatingForUnixTimeStamp.getUnixTime();
+		return created;
 	}
 
 	

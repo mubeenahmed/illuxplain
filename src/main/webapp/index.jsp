@@ -107,7 +107,7 @@
 				<!-- Comments Form -->
 				<div class="well">
 					<h4>Leave a Comment:</h4>
-					<form id="myForm" method="POST">
+					<form id="myForm" method="POST" action="#">
 						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
 						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
 						<input type="submit" class="btn btn-primary" value="submit" />
