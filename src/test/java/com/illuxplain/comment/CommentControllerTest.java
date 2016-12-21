@@ -1,6 +1,6 @@
 package com.illuxplain.comment;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import junit.framework.TestCase;
 
@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.illuxplain.controllers.CommentController;
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.MySqlCommentPresistence;
 
@@ -30,8 +29,6 @@ public class CommentControllerTest extends TestCase {
 
 	@Mock
 	MySqlCommentPresistence<Comments> presistence;
-	@InjectMocks
-	CommentController commentController;
 	
 	private MockMvc mockMvc;
 	
@@ -51,7 +48,7 @@ public class CommentControllerTest extends TestCase {
 		Mockito.when(presistence.save("", new Object[] { "", "", "" }))
 				.thenReturn(true);
 
-		mockMvc.perform(get("/add-comment")).andExpect(status().isOk());
+		mockMvc.perform(post("/add-comment")).andExpect(status().isOk());
 	}
 
 }
