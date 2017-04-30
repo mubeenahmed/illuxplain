@@ -68,8 +68,8 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1>Article is incomplete, These articles on machine learning algorithms will be comming soon</h1>
-                <h2>About Some Machine Learning Algorithms Overview</h2>
+                <h1>What is Monad? Why we need Monad? How it help us?</h1>
+                <h2>Monad Overview</h2>
                 <!-- Author -->
                 <p class="lead">
                     by <a href="#">Mubeen Ahmed</a>
