@@ -195,6 +195,7 @@
 							<ul class="list-unstyled">
 								<li><a href="/machine-learning"> Machine Learning</a></li>
 								<li><a href="/illuxplain">Illuxplain Application</a>
+								<li><a href="/monad">Monad</a>
 							</ul>
 						</div>
 						<!--  <div class="col-lg-6">

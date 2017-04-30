@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Illuxplain - About Machine Learning Algorithms</title>
+    <title>Illuxplain - Monad</title>
 
     <script src="<c:url value = "/resources/js/bootstrap.js" />"></script>
 	<script src="<c:url value = "/resources/js/bootstrap.min.js" />"></script>
