@@ -88,8 +88,6 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead"> There are lot of Machine learning Algorithms, Donot rush out to learn all of these algorithms, you will get overwhelmed and there will be no output. </p> 
-                <p> Start learning by identify the problem to be solved or you are interested in. Maintain the list of the algorithms, there types and the types of problems that solved </p>
 
                 <p> Monoid and Monad are similar. They are the endo functor. In computer science Monoid and Monad are achieved by functional composition. In Monoid the function of any type take as an input and return sometype has an output (common functional pattern). Whereas Monad are the special case. It takes the any type of input and return the wrapper with the type of output(common functional pattern).  
 					Monoid and Monad are the abstract interface that works on any type of data structure. 
