@@ -97,10 +97,9 @@
 					Monad in Cateogory Theory has two operation 'identity' and 'bind'. In Scala they call 'bind' as 'flatMap' and 'identity' as 'unit'. There are many different words for same concept. We donot have to get confused.
 					First we will show the simple example of Monad implementation. </p>
 					
-				<pre><![CDATA[trait M[A] {
+				<pre>trait M[A] {
 						  def flatMap[B] (f : A => M[B] ) : M[B]
 						  def unit[A](x : A) : M[A]
-						}]]>
 				</pre>
 				<p>As we can see here, We have the unit which takes an input and returns the wrapper of that type. 
 				Whereas the flatMap takes an input function and return the wraper. 
@@ -120,13 +119,13 @@
 				
 				<p>Althoug I am not sure enough if this is a example of Monad. I am sharing one of my own implementation</p>
 				
-				<pre><![CDATA[class ShiftGear(s : Int) {
+				<pre>class ShiftGear(s : Int) {
 					  def shift(f : Int => ShiftGear) : ShiftGear = new ShiftGear(s + 1)
 					  override def toString = "Changed Gear: " + s
-					}]]>
+					}
 				</pre>
 				
-				<pre><![CDATA[object Client{
+				<pre>object Client{
 						  def main(args: Array[String]): Unit = {
 						    val currentState : Int = 0
 						    val shiftGear = new ShiftGear(currentState)
@@ -135,7 +134,7 @@
 						    println(result)
 						  }
 						}
-						//Outputs: Changed Gear: 3]]>
+						//Outputs: Changed Gear: 3
 				</pre>
 
                 <hr>
