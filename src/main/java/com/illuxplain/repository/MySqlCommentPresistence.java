@@ -14,15 +14,15 @@ public class MySqlCommentPresistence<Comments> extends PresistenceRepository<Com
 	
 	@Override
 	public <Comments> List<Comments> readforList(String query, Object[] params) throws SQLException, ClassNotFoundException {
-		List<Comments> listOfComments = (List<Comments>) jdbcTemplate.queryForList(query, params); 
+		List<Comments> listOfComments = null;//= (List<Comments>) jdbcTemplate.queryForList(query, params); 
 		return listOfComments;
 	}
 
 	@Override
 	public boolean save(String query, Object[] params) throws ClassNotFoundException, SQLException {
-		int affectedRow = jdbcTemplate.update(query, params);
-		if(affectedRow > 0)
-			return true;
+		//int affectedRow = jdbcTemplate.update(query, params);
+		//if(affectedRow > 0)
+		//	return true;
 		return false;
 	}
 
