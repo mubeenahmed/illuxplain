@@ -129,7 +129,7 @@
 						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
 						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
 						<input type="submit" class="btn btn-primary" value="submit" />
-						<input type="hidden" value="illux-1" name="pageID" />
+						<input type="hidden" value="machine-1" name="pageID" />
 					</form>
 				</div>
 				<div class="media-body">
