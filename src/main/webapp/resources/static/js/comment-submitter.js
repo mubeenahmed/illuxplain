@@ -9,7 +9,7 @@ $(function(){
 	        values[this.name] = $(this).val();
 	    });
 	    $.ajax({ url: base + "add-comment", data: values, method:"POST" }).then(function(data) {
-	       $('.comment-submitted').append(data);
+	    	$('.comment-submitted').show();
 	    });
 	});
 });

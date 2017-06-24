@@ -124,22 +124,22 @@
 				
 				<p>Althoug I am not sure enough if this is a example of Monad. I am sharing one of my own implementation</p>
 				
-				<code>class ShiftGear(s : Int) {
-					  def shift(f : Int => ShiftGear) : ShiftGear = new ShiftGear(s + 1)
-					  override def toString = "Changed Gear: " + s
-					}
+				<code>class ShiftGear(s : Int) { <br>
+					  def shift(f : Int => ShiftGear) : ShiftGear = new ShiftGear(s + 1) <br>
+					  override def toString = "Changed Gear: " + s <br>
+					} <br><br>
 				</code>
 				
-				<code>object Client{
-						  def main(args: Array[String]): Unit = {
-						    val currentState : Int = 0
-						    val shiftGear = new ShiftGear(currentState)
-						    val getState = (currentState : Int) => shiftGear
-						    val result = shiftGear.shift(getState).shift(getState).shift(getState)
-						    println(result)
-						  }
-						}
-						//Outputs: Changed Gear: 3
+				<code>object Client{ <br>
+						  def main(args: Array[String]): Unit = { <br>
+						    val currentState : Int = 0 <br>
+						    val shiftGear = new ShiftGear(currentState) <br>
+						    val getState = (currentState : Int) => shiftGear <br>
+						    val result = shiftGear.shift(getState).shift(getState).shift(getState) <br>
+						    println(result) <br>
+						  } <br>
+						} <br>
+						//Outputs: Changed Gear: 3 <br>
 				</code>
 
                 <hr>
@@ -147,12 +147,13 @@
                 <!-- Blog Comments -->
 
                 <div class="well">
+                	<p class="comment-submitted" style="display:none">Comment Submitted Successfully!</p>
 					<h4>Leave a Comment:</h4>
 					<form id="myForm" method="POST">
 						<input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
 						<textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
 						<input type="submit" class="btn btn-primary" value="submit" />
-						<input type="hidden" value="illux-1" name="pageID" />
+						<input type="hidden" value="cat-1" name="pageID" />
 					</form>
 				</div>
 				<div class="media-body">

@@ -88,6 +88,7 @@
 
 						<!-- Comments Form -->
 						<div class="well">
+							<p class="comment-submitted" style="display:none">Comment Submitted Successfully!</p>
 							<h4>Leave a Comment:</h4>
 							<form id="myForm" method="POST">
 								<input class="form-control" name="nameOfCommentor"
