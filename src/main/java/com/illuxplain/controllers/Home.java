@@ -27,7 +27,7 @@ public class Home {
 		Object[] params = { "wel-1" };
 		try {
 			List<Comments> listOfComments = commentRepo.readforList(createQueryForAllComments(), params);
-			ModelAndView modelAndView = new ModelAndView("index");
+			ModelAndView modelAndView = new ModelAndView("home");
 			modelAndView.addObject("commentList",listOfComments);
 			return modelAndView;	
 		} 
