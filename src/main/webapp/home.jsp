@@ -134,13 +134,19 @@
                         </h4>
                        
                     </div> -->
-					<div class="media-body">
+					<div class="well">
 						<c:forEach items="${commentList}" var="comment">
 						<div class="media">
 							<h4 class="media-heading">
 								<small>${comment.comment_name}</small>
 							</h4>
 							<b>Comment</b> :<p>${comment.comment_text}</p>
+							<a  pointer="cursor" onclick="openTextBox()">Reply</a>
+							<div style="display:none" id="replyDiv">
+								<input id="comment_id" type="hidden" name="comment_id" value="${comment.comment_id}" />
+								<textarea name="replyTxt" id="reply" class="form-control" rows="3"></textarea>
+								<input type="submit" value="Reply" name="reply" onclick="reply()" />
+							</div>
 						</div>	
 						</c:forEach>
 					</div>

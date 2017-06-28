@@ -13,3 +13,11 @@ $(function(){
 	    });
 	});
 });
+
+function openTextBox() {
+	$("#replyDiv").toggle();
+}
+function reply(){
+	let reply = $("textarea[name='replyTxt']").text();
+	let id = $("#comment_id").val();
+}
