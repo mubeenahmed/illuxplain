@@ -11,6 +11,7 @@
 	<body>
 		<div class="container">  
 		  <form id="contact" action='${base}submit_contact' method="post">
+		    <p style="color:green;">${success}</p>
 			<h3>Contact Me</h3>
 			<fieldset>
 			  <input placeholder="Your name" type="text" name="name" tabindex="1" required autofocus>

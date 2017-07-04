@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.illupxlain.utils.GeneratingDataUtils;
 import com.illuxplain.models.Contact;
@@ -28,12 +29,18 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value = "submit_contact", method = RequestMethod.POST)
-	public ModelAndView submitContact(@ModelAttribute Contact contact) {
+	public String submitContact(@ModelAttribute Contact contact, RedirectAttributes attr) {
 		Object[] params = createParameter(contact);
 		String query = createInsertQuery();
 		try {
 			boolean saved = contactRepo.save(query, params);
-			return new ModelAndView("redirect:contact");
+			if(saved) {
+				attr.addFlashAttribute("success", "Thank you for contacting us. We will contact you soon");
+			}
+			else {
+				attr.addFlashAttribute("success", "oops! something goes wrong");
+			}
+			return "redirect:contact";
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
