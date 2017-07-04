@@ -6,10 +6,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ContactController {
-	
-	@RequestMapping(value="contact")
-	public View contact(){
-			ModelAndView modelAndView = new ModelAndView("contact");
-			return modelAndView;	
+
+	@RequestMapping(value = "contact")
+	public ModelAndView contact() {
+		ModelAndView modelAndView = new ModelAndView("contact");
+		return modelAndView;
 	}
 }
