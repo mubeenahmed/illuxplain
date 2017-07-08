@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.illupxlain.utils.GeneratingDataUtils;
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.MySqlCommentPresistence;
+import com.illuxplain.repository.PresistenceRepository;
 
 
 
@@ -21,7 +22,7 @@ public class CommentController {
 	
 	@Autowired
 	@Qualifier("mysqlCommentRepo")
-	MySqlCommentPresistence<Comments> commentRepo;
+	PresistenceRepository<Comments> commentRepo;
 	
 	@RequestMapping(value="add-comment" , method=RequestMethod.POST)
 	public String submitHomeComment(@ModelAttribute Comments comment){

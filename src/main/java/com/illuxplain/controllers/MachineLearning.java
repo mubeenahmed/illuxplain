@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.MySqlCommentPresistence;
+import com.illuxplain.repository.PresistenceRepository;
 
 
 @Controller
@@ -18,7 +19,7 @@ public class MachineLearning {
 	
 	@Autowired
 	@Qualifier("mysqlCommentRepo")
-	MySqlCommentPresistence<Comments> commentRepo;
+	PresistenceRepository<Comments> commentRepo;
 	
 	
 	@RequestMapping(value="machine-learning")

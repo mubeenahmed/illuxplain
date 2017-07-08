@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.MySqlCommentPresistence;
+import com.illuxplain.repository.PresistenceRepository;
 
 
 @Controller
@@ -20,7 +21,7 @@ public class Home {
 	
 	@Autowired
 	@Qualifier("mysqlCommentRepo")
-	MySqlCommentPresistence<Comments> commentRepo;
+	PresistenceRepository<Comments> commentRepo;
 	
 	@RequestMapping(value={"/", "welcome","home"} , method=RequestMethod.GET)
 	public ModelAndView home(){

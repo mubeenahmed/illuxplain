@@ -14,13 +14,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.illupxlain.utils.GeneratingDataUtils;
 import com.illuxplain.models.Contact;
 import com.illuxplain.repository.MySqlContactPresistence;
+import com.illuxplain.repository.PresistenceRepository;
 
 @Controller
 public class ContactController {
 	
 	@Autowired
 	@Qualifier("mysqlContactRepo")
-	MySqlContactPresistence<Contact> contactRepo;
+	PresistenceRepository<Contact> contactRepo;
 	
 	@RequestMapping(value = "contact")
 	public ModelAndView contact() {

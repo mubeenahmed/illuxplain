@@ -19,12 +19,4 @@ public class MySqlCommentPresistence<Comments> extends PresistenceRepository<Com
 		return listOfComments;
 	}
 
-	@Override
-	public boolean save(String query, Object[] params) throws ClassNotFoundException, SQLException {
-		int affectedRow = jdbcTemplate.update(query, params);
-		if(affectedRow > 0)
-			return true;
-		return false;
-	}
-
 }
