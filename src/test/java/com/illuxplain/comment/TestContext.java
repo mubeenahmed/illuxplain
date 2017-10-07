@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.MySqlCommentPresistence;
+import com.illuxplain.repository.PresistenceRepository;
 
 @Configuration
 @ComponentScan(basePackages={"com.illuxplain"})
@@ -58,11 +59,6 @@ public class TestContext {
     @Bean
 	public JdbcTemplate jdbcTemplate(DataSource dataSource){
 		return Mockito.mock(JdbcTemplate.class);
-	}
-	
-	@Bean 
-	public MySqlCommentPresistence<Comments> appointmentPersistener(){
-		return Mockito.mock(MySqlCommentPresistence.class);
 	}
 	
 }

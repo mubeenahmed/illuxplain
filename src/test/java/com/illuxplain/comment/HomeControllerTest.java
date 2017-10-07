@@ -1,14 +1,11 @@
 package com.illuxplain.comment;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,34 +18,26 @@ import org.springframework.web.context.WebApplicationContext;
 import com.illuxplain.models.Comments;
 import com.illuxplain.repository.PresistenceRepository;
 
-import junit.framework.TestCase;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { TestContext.class } )
+@ContextConfiguration(classes = { TestContext.class })
 @WebAppConfiguration
-public class CommentControllerTest extends TestCase {
+public class HomeControllerTest {
 
 	@Mock
 	PresistenceRepository<Comments> presistence;
-	
-	private MockMvc mockMvc;
-	
-	  @Autowired
-	  private WebApplicationContext webApplicationContext;
 
+	private MockMvc mockMvc;
+	@Autowired
+	private WebApplicationContext webApplicationContext;
+	
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
-
+	
 	@Test
-	public void testGetCommentsListFromRepositoryShouldHaveCommentObject()
-			throws Exception {
-		Mockito.when(presistence.save("", new Object[] { "", "", "" }))
-				.thenReturn(true);
-
-		mockMvc.perform(post("/add-comment")).andExpect(status().isOk());
+	public void testHomeShouldHaveEmptyRepliesList() throws Exception {
+		mockMvc.perform(get("/home")).andExpect(model().attributeExists("commentList"));
 	}
-
 }

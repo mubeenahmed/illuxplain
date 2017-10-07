@@ -141,6 +141,8 @@
 								<small>${comment.comment_name}</small>
 							</h4>
 							<b>Comment</b> :<p>${comment.comment_text}</p>
+							
+							<b>Replies</b>
 							<a  pointer="cursor" onclick="openTextBox(this)">Reply</a>
 							<div style="display:none" class="replyDiv">
 								<form class="replyForm" method="POST" action="#">
