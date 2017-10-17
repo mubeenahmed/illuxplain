@@ -119,10 +119,10 @@
 			                    <configuration>
 			                        <artifactItems>
 			                            <artifactItem>
-			                                <groupId>com.github.jsimone</groupId>
-			                                <artifactId>webapp-runner</artifactId>
-			                                <version>8.5.23.0</version>
-			                                <destFileName>webapp-runner.jar</destFileName>
+			                              <groupId>org.eclipse.jetty</groupId>
+			                              <artifactId>jetty-runner</artifactId>
+			                              <version>9.4.4.v20170414</version>
+			                       <destFileName>jetty-runner.jar</destFileName>
 			                            </artifactItem>
 			                        </artifactItems>
 			                    </configuration>

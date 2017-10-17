@@ -60,7 +60,7 @@ public class ContactController {
 	}
 	
 	private String createInsertQuery() {
-		String query = "INSERT INTO contact (`name`,`email`,`message`, `created_at`) VALUES(?,?,?,?)";
+		String query = "INSERT INTO contact (name,email,message, created_at) VALUES(?,?,?,?)";
 		return query;
 	}
 	

@@ -34,7 +34,7 @@ public class ReplyController {
 	}
 	
 	private String createInertQueryReply() {
-		return "INSERT INTO replies(`name`,`reply`,`comment_id`,`created_at`) VALUES(?,?,?,?)";
+		return "INSERT INTO replies(name,reply,comment_id,created_at) VALUES(?,?,?,?)";
 	}
 	
 	private Object[] createParameter(Reply reply) {
