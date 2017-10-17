@@ -24,7 +24,6 @@ public class MachineLearning {
 	
 	@RequestMapping(value="machine-learning")
 	public ModelAndView machineLearning(){
-				
 		Object[] params = { "machine-1"};
 		try {
 			List<Comments> listOfComments = commentRepo.readforList(createQueryForAllComments(), params);
