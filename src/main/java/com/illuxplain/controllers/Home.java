@@ -23,9 +23,4 @@ public class Home {
 //		return modelAndView;
 		return "home";
 	}
-
-	private String createQueryForAllComments() {
-		return "SELECT * FROM comments WHERE page_id = ? ";
-	}
-
 }

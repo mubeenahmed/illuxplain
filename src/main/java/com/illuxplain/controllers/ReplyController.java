@@ -14,5 +14,4 @@ public class ReplyController {
 		boolean result = true; // presistenceRepository.save(createInertQueryReply(), createParameter(reply));
 		return "Ok";
 	}
-
 }

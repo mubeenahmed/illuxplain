@@ -2,11 +2,8 @@ package com.illuxplain.models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -15,69 +12,85 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "comment")
 public class Comment {
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
-
-	private String comment;
-	private String name;
+	private Long id;
+	
+	@Column(name = "comment_text")
+	private String commentText;
+	
+	@Column(name = "name_of_commentor")
+	private String nameOfCommentor;
+	
+	@Column(name = "created")
 	private long created;
-
+	
 	@Column(name = "page_id")
 	private String pageID;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "reply_id")
-	private List<Reply> reply;
 
-	public long getId() {
+	@OneToMany
+	@JoinColumn(name = "replies_id")
+	private List<Reply>	replies;
+
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getComment() {
-		return comment;
+
+	public String getCommentText() {
+		return commentText;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+
+	public void setCommentText(String commentText) {
+		this.commentText = commentText;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getNameOfCommentor() {
+		return nameOfCommentor;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+	public void setNameOfCommentor(String nameOfCommentor) {
+		this.nameOfCommentor = nameOfCommentor;
 	}
+
 
 	public long getCreated() {
 		return created;
 	}
 
+
 	public void setCreated(long created) {
 		this.created = created;
 	}
+
 
 	public String getPageID() {
 		return pageID;
 	}
 
+
 	public void setPageID(String pageID) {
 		this.pageID = pageID;
 	}
 
-	public List<Reply> getReply() {
-		return reply;
+
+	public List<Reply> getReplies() {
+		return replies;
 	}
 
-	public void setReply(List<Reply> reply) {
-		this.reply = reply;
-	}
 
+	public void setReplies(List<Reply> replies) {
+		this.replies = replies;
+	}
+	
 	
 }

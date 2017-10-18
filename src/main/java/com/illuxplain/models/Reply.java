@@ -1,6 +1,7 @@
 package com.illuxplain.models;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,8 @@ public class Reply {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 	private String name;
+	
+	@Column(name = "reply")
 	private String reply;
 
 	@ManyToOne(cascade = CascadeType.ALL)

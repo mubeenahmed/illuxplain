@@ -24,6 +24,4 @@ public class CategoryTheory {
 //		return modelAndView;
 		return "monad";
 	}
-
-
 }
