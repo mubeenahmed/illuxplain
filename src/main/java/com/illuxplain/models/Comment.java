@@ -2,54 +2,95 @@ package com.illuxplain.models;
 
 import java.util.List;
 
-public class Comments {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "comment")
+public class Comment {
 	
+	@Id
+	private Long id;
+	
+	@Column(name = "comment_text")
 	private String commentText;
+	
+	@Column(name = "name_of_commentor")
 	private String nameOfCommentor;
+	
+	@Column(name = "created")
 	private long created;
+	
+	@Column(name = "page_id")
 	private String pageID;
-	private long comment_id;
+
+	@OneToMany
+	@JoinColumn(name = "replies_id")
 	private List<Reply>	replies;
-	
-	
-	public List<Reply> getReplies() {
-		return replies;
+
+
+	public Long getId() {
+		return id;
 	}
-	public void setReplies(List<Reply> replies) {
-		this.replies = replies;
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public long getComment_id() {
-		return comment_id;
-	}
-	public void setComment_id(long comment_id) {
-		this.comment_id = comment_id;
-	}
+
+
 	public String getCommentText() {
 		return commentText;
 	}
+
+
 	public void setCommentText(String commentText) {
 		this.commentText = commentText;
 	}
+
+
 	public String getNameOfCommentor() {
 		return nameOfCommentor;
 	}
+
+
 	public void setNameOfCommentor(String nameOfCommentor) {
 		this.nameOfCommentor = nameOfCommentor;
 	}
+
+
 	public long getCreated() {
 		return created;
 	}
+
+
 	public void setCreated(long created) {
 		this.created = created;
 	}
+
+
 	public String getPageID() {
 		return pageID;
 	}
+
+
 	public void setPageID(String pageID) {
 		this.pageID = pageID;
 	}
-	
-	
+
+
+	public List<Reply> getReplies() {
+		return replies;
+	}
+
+
+	public void setReplies(List<Reply> replies) {
+		this.replies = replies;
+	}
 	
 	
 }

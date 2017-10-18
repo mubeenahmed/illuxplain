@@ -13,7 +13,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.illuxplain.models.Comments;
+import com.illuxplain.models.Comment;
 import com.illuxplain.repository.MySqlCommentPresistence;
 import com.illuxplain.repository.PresistenceRepository;
 

@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.illuxplain.models.Comments;
+import com.illuxplain.models.Comment;
 import com.illuxplain.repository.PresistenceRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -24,7 +24,7 @@ import com.illuxplain.repository.PresistenceRepository;
 public class HomeControllerTest {
 
 	@Mock
-	PresistenceRepository<Comments> presistence;
+	PresistenceRepository<Comment> presistence;
 
 	private MockMvc mockMvc;
 	@Autowired

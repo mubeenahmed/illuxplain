@@ -1,10 +1,27 @@
 package com.illuxplain.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Table(name = "reply")
+@Entity
 public class Reply {
 	
+	@Id
+	private long id;
+	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "reply")
 	private String reply;
-	private String commentId;
+	
+	@ManyToOne
+	private Comment comment;
+	
 	private String createAt;
 	
 	
@@ -14,12 +31,6 @@ public class Reply {
 	}
 	public void setCreateAt(String createAt) {
 		this.createAt = createAt;
-	}
-	public String getCommentId() {
-		return commentId;
-	}
-	public void setCommentId(String commentId) {
-		this.commentId = commentId;
 	}
 	public String getName() {
 		return name;

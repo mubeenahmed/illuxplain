@@ -11,34 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.illupxlain.utils.GeneratingDataUtils;
 import com.illuxplain.models.Reply;
-import com.illuxplain.repository.PresistenceRepository;
 
 @RestController
 public class ReplyController {
 	
-	@Autowired
-	@Qualifier("mysqlCommentRepo")
-	PresistenceRepository<Reply> presistenceRepository;
-	
 	@RequestMapping(value = "reply_submitter", method = RequestMethod.POST)
 	public String saveReply(@ModelAttribute Reply reply) {
-		try {
-			boolean result = presistenceRepository.save(createInertQueryReply(), createParameter(reply));
-			return "Ok";
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			boolean result = presistenceRepository.save(createInertQueryReply(), createParameter(reply));
+//			return "Ok";
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		return null;
 	}
 	
-	private String createInertQueryReply() {
-		return "INSERT INTO replies(name,reply,comment_id,created_at) VALUES(?,?,?,?)";
-	}
+//	private String createInertQueryReply() {
+//		return "INSERT INTO replies(name,reply,comment_id,created_at) VALUES(?,?,?,?)";
+//	}
 	
-	private Object[] createParameter(Reply reply) {
-		GeneratingDataUtils date = new GeneratingDataUtils();
-		return new Object[]{reply.getName(), reply.getReply(), reply.getCommentId(), date.getUnixTime()};
-	}
+//	private Object[] createParameter(Reply reply) {
+//		GeneratingDataUtils date = new GeneratingDataUtils();
+//		return new Object[]{reply.getName(), reply.getReply(), reply.getCommentId(), date.getUnixTime()};
+//	}
 }
