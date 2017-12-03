@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.illupxlain.utils.GeneratingDataUtils;
 import com.illuxplain.models.Contact;
 
 @Controller
