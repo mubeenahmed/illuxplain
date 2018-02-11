@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<base href="${base}">
+	<base href="/">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,21 +10,19 @@
 	<meta name="author" content="">
 
 	<title>Illuxplain - App</title>
-	<!-- jQuery -->
+	<script th:src="@{/js/bootstrap.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
 	<script th:src="@{/js/jquery.js}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script th:src="@{/js/bootstrap.min.js}" ></script>
-	<script th:src="@{/js/comment-submitter.js}"> </script>
+	<script th:src="@{/js/comment-submitter.js}" /> </script>
 
 
 
-	<link th:href="@{/css/bootstrap.min.css}" />
-	<!-- Custom CSS -->
-	<link th:href="@{/css/blog-post.css}" />
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/css/blog-post.css}" rel="stylesheet">
 
 </head>
+
 
 <body>
 
@@ -86,7 +84,7 @@
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="startup.png" alt="">
+                <img class="img-responsive" th:src="@{images/startup.png}" alt="">
 
                 <hr>
 
@@ -238,9 +236,9 @@
     <!-- /.container -->
 
 	<!-- jQuery -->
-	<script src="@{/js/jquery.js}"></script>
+	<script th:src="@{/js/jquery.js}"></script>
 
-	<script src="@{/js/bootstrap.min.js}" ></script>
+	<script th:src="@{/js/bootstrap.min.js}" ></script>
 
 </body>
 
