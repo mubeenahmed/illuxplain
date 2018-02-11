@@ -127,12 +127,11 @@
                        
                     </div> -->
 					<div class="well">
-						<c:forEach items="${commentList}" var="comment">
-						<div class="media">
+						<div th:each="comment: ${commentList}" class="media">
 							<h4 class="media-heading">
-								<small>${comment.comment_name}</small>
+								<small><span th:text="${comment.comment_name}"/></small>
 							</h4>
-							<b>Comment</b> :<p>${comment.comment_text}</p>
+							<b>Comment</b> :<span th:text="${comment.comment_text}"/>
 							
 							<b>Replies</b>
 							<a  pointer="cursor" onclick="openTextBox(this)">Reply</a>
@@ -144,8 +143,7 @@
 									<input type="submit"  />
 								</form>
 							</div>
-						</div>	
-						</c:forEach>
+						</div>
 					</div>
 				</div>
 

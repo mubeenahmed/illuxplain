@@ -2,6 +2,7 @@ package com.illuxplain.controllers;
 
 import java.sql.SQLException;
 
+import com.illuxplain.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ import com.illuxplain.models.Contact;
 @Controller
 public class ContactController {
 
+	@Autowired
+	private ContactRepository contactRepository;
+
 	@RequestMapping(value = "contact")
 	public String contact() {
 //		ModelAndView modelAndView = new ModelAndView("contact");
@@ -25,8 +29,8 @@ public class ContactController {
 
 	@RequestMapping(value = "submit_contact", method = RequestMethod.POST)
 	public String submitContact(@ModelAttribute Contact contact, RedirectAttributes attr) {
-		boolean saved = true; // contactRepo.save(query, params);
-		if (saved) {
+		Contact saved = contactRepository.saveAndFlush(contact);
+		if (saved != null) {
 			attr.addFlashAttribute("success", "Thank you for contacting us. We will contact you soon");
 		} else {
 			attr.addFlashAttribute("success", "oops! something goes wrong");

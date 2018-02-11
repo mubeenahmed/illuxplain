@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<base href="${base}">
+	<base th:href="@{''}">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,12 +10,12 @@
 	<meta name="author" content="">
 
 		<title>Illuxplain - Contact Us</title>
-		<link th:src="@{/css/style.css}" rel="stylesheet">
+		<link th:href="@{/css/style.css}" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">  
-		  <form id="contact" action='${base}submit_contact' method="post">
-		    <p style="color:green;">${success}</p>
+		  <form id="contact"  action='submit_contact' method="post">
+		    <span th:text="${success}"></span>
 			<h3>Contact Me</h3>
 			<fieldset>
 			  <input placeholder="Your name" type="text" name="name" tabindex="1" required autofocus>
