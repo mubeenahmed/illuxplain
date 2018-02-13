@@ -1,4 +1,4 @@
-package com.illuxplain.controllers;
+package com.illuxplain.controllers.introduction;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.illuxplain.controllers;
+package com.illuxplain.controllers.contact;
 
 import java.sql.SQLException;
 
