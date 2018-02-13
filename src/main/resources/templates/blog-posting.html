@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,300i,400,400i">
+        <link href="www.tinymce.com/css/codepen.min.css" >
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+                
+        <script src="../static/js/tinymce/js/tinymce/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor textcolor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code help wordcount'
+            ],
+            toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+            content_css: [
+                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                '//www.tinymce.com/css/codepen.min.css']
+            });
+        </script>
+        <script>
+            $(document).ready(() =>
+            {
+                $("#submit").click(() =>
+                {
+                    let message = tinyMCE.editors[$('#message').attr('id')].getContent();
+                    let display = $('#display').append(message);
+                    console.log(message);
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <textarea id="message"></textarea>
+        <input type="button" id="submit" value="Submit" />
+
+        <div id="display">
+
+        </div>
+    </body>
+</html>

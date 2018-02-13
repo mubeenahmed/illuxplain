@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8cd67c0-db0c-4f3c-bd89-524645dc9e66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_0_7_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/blog/BlogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/dtos/FullBlogDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/dtos/MinBlogDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/models/Blog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/repository/BlogRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/services/BlogServices.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/services/IBlogServices.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/CategoryTheory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/Illxuplain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/MachineLearning.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/templates/function-di.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/templates/illuxplain.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/templates/machine-learning.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/templates/monad.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/illuxplain.iml" afterPath="$PROJECT_DIR$/illuxplain.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/blog/CommentController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/ContactController.java" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/contact/ContactController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/Home.java" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/introduction/Home.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/ReplyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/blog/ReplyController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +17,8 @@
       <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/blog/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="311">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/illuxplain/services/BlogServices.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
-              <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+              <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -643,7 +621,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/illuxplain/services/BlogServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
-          <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -660,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/illuxplain/controllers/blog/BlogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="311">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
