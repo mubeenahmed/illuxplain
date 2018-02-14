@@ -2,13 +2,22 @@ package com.illuxplain.dtos;
 
 public class MinBlogDTO {
 
-    private String content;
+    private String title;
+    private String titleContent;
 
-    public String getContent() {
-        return content;
+    public String getTitle() {
+        return title;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitleContent() {
+        return titleContent;
+    }
+
+    public void setTitleContent(String titleContent) {
+        this.titleContent = titleContent;
     }
 }
