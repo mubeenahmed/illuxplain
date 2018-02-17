@@ -16,8 +16,7 @@ public class Blog {
 
     @Column(name = "title_content")
     private String titleContent;
-
-    @Lob
+    
     @Column( length = 100000 )
     private String content;
 
