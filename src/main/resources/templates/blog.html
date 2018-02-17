@@ -30,8 +30,8 @@
 
                     <!-- Date/Time -->
                     <p>
-                        <span class="glyphicon glyphicon-time"></span> Posted on December
-                        Create time here
+                        <span class="glyphicon glyphicon-time">Posted on: </span>
+                        <span th:text="${blog.created}"></span>
                     </p>
 
                     <hr>
@@ -42,7 +42,7 @@
                     <hr>
 
                     <!-- Post Content -->
-                    <div th:utext="${blog.content}"></div>
+                    <div  th:remove="tag" th:utext="${blog.content}"></div>
 
                     <!-- Posted Comments -->
                     <div th:replace="fragments/comment :: comment"></div>

@@ -1,4 +1,4 @@
-package com.illuxplain.dtos;
+package com.illuxplain.dtos.blog;
 
 public class MinBlogDTO {
 

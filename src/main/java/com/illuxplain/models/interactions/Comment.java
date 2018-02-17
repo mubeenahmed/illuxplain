@@ -1,4 +1,4 @@
-package com.illuxplain.models;
+package com.illuxplain.models.interactions;
 
 import java.util.List;
 

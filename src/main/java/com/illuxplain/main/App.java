@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages =  { "com.illuxplain.controllers", "com.illuxplain.services"})
+@SpringBootApplication(scanBasePackages =  { "com.illuxplain.controllers",
+		"com.illuxplain.services", "com.illuxplain.utils","com.illuxplain.configurations"})
 @EnableJpaRepositories(basePackages = {"com.illuxplain.repository"} )
 @EntityScan("com.illuxplain.models")
 public class App {

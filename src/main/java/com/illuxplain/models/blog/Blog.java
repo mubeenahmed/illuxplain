@@ -1,4 +1,4 @@
-package com.illuxplain.models;
+package com.illuxplain.models.blog;
 
 import javax.persistence.*;
 import java.util.Date;

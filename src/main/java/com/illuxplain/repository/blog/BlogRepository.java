@@ -1,10 +1,7 @@
-package com.illuxplain.repository;
+package com.illuxplain.repository.blog;
 
-import com.illuxplain.dtos.MinBlogDTO;
-import com.illuxplain.models.Blog;
+import com.illuxplain.models.blog.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface BlogRepository extends JpaRepository<Blog, Long> {
 

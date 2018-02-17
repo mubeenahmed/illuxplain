@@ -1,8 +1,9 @@
-package com.illuxplain.services;
+package com.illuxplain.services.blog;
 
-import com.illuxplain.dtos.MinBlogDTO;
-import com.illuxplain.models.Blog;
-import com.illuxplain.repository.BlogRepository;
+import com.illuxplain.dtos.blog.MinBlogDTO;
+import com.illuxplain.models.blog.Blog;
+import com.illuxplain.repository.blog.BlogRepository;
+import com.illuxplain.utils.BlogContentManagement;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class BlogServices implements IBlogServices {
 
     @Autowired
     private BlogRepository blogRepository;
+
+    @Autowired
+    private BlogContentManagement blogContentManagement;
 
     ModelMapper mapper = new ModelMapper();
 
@@ -29,5 +33,15 @@ public class BlogServices implements IBlogServices {
         return blogs.stream()
                 .map(blog -> mapper.map(blog, MinBlogDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Blog saveBlog(Blog blog) throws Exception {
+        String title = blog.getTitleContent();
+        String alterTitle = blogContentManagement.convertToLowerCaseAndStripeWithDash(title);
+        blog.setTitle(alterTitle);
+
+        Blog b = blogRepository.saveAndFlush(blog);
+        return b;
     }
 }

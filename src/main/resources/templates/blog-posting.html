@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <link href="http://fonts.googleapis.com/css?family=Lato:300,300i,400,400i">
         <link href="www.tinymce.com/css/codepen.min.css" >
@@ -6,7 +6,7 @@
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                 crossorigin="anonymous"></script>
                 
-        <script src="../static/js/tinymce/js/tinymce/tinymce.min.js"></script>
+        <script th:src="@{/js/tinymce/js/tinymce/tinymce.min.js}"></script>
         <script>
             tinymce.init({
             selector: 'textarea',
@@ -19,16 +19,16 @@
             ],
             toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
             content_css: [
-                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-                '//www.tinymce.com/css/codepen.min.css']
+                'https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                'https://www.tinymce.com/css/codepen.min.css']
             });
         </script>
         <script>
             $(document).ready(() =>
             {
-                $("#submit").click(() =>
+                $("#preview").click(() =>
                 {
-                    let message = tinyMCE.editors[$('#message').attr('id')].getContent();
+                    let message = tinyMCE.editors[$('#content').attr('id')].getContent();
                     let display = $('#display').append(message);
                     console.log(message);
                 });
@@ -37,9 +37,15 @@
     </head>
 
     <body>
-        <textarea id="message"></textarea>
-        <input type="button" id="submit" value="Submit" />
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/blog/submit}" th:object="${blog}" method="POST">
+            <label>Title: </label>
+            <input type="text" th:field="*{titleContent}" value="" />
 
+            <textarea id="content" th:field="*{content}" ></textarea>
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+        <input type="button" id="preview" value="Preview" />
         <div id="display">
 
         </div>

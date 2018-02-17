@@ -1,18 +1,14 @@
 package com.illuxplain.controllers.contact;
 
-import java.sql.SQLException;
-
-import com.illuxplain.repository.ContactRepository;
+import com.illuxplain.repository.interactions.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.illuxplain.models.Contact;
+import com.illuxplain.models.interactions.Contact;
 
 @Controller
 public class ContactController {
