@@ -1,30 +1,24 @@
-package com.illuxplain.controllers.blog;
+package com.illuxplain.controllers.blog.management;
 
 import com.illuxplain.models.blog.Blog;
 import com.illuxplain.services.blog.IBlogServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
-public class BlogController {
+@RequestMapping("/management/blog/")
+public class BlogManagmentController {
 
     @Autowired
     private IBlogServices blogServices;
 
-    @RequestMapping(value = "blog/{path}")
-    public ModelAndView getBlog(@PathVariable String path)
-    {
-        String blogTitle = path.toLowerCase();
-        Blog blog = blogServices.getBlog(blogTitle);
-
-        ModelAndView modelAndView = new ModelAndView("blog");
-        modelAndView.addObject("blog", blog);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "blog/submit", method = RequestMethod.POST)
+    @PostMapping("/submit")
     public ModelAndView submitBlog(Blog blog)
     {
         try {
@@ -37,7 +31,7 @@ public class BlogController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add/blog", method = RequestMethod.GET)
+    @GetMapping("/add")
     public ModelAndView getBlogPostPage()
     {
         ModelAndView modelAndView = new ModelAndView("blog-posting");

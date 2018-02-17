@@ -1,4 +1,4 @@
-package com.illuxplain.controllers.blog;
+package com.illuxplain.controllers.blog.readers;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

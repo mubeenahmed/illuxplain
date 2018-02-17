@@ -37,8 +37,11 @@
     </head>
 
     <body>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" name="logout" value="Logout" />
+        </form>
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/blog/submit}" th:object="${blog}" method="POST">
+        <form th:action="@{/management/blog/submit}" th:object="${blog}" method="POST">
             <label>Title: </label>
             <input type="text" th:field="*{titleContent}" value="" />
 
