@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 
 @Controller
 @RequestMapping("/management/blog/")
@@ -19,10 +21,10 @@ public class BlogManagmentController {
     private IBlogServices blogServices;
 
     @PostMapping("/submit")
-    public ModelAndView submitBlog(Blog blog)
+    public ModelAndView submitBlog(Blog blog, Principal principal)
     {
         try {
-            blogServices.saveBlog(blog);
+            blogServices.saveBlog(blog, principal);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,7 +1,9 @@
 package com.illuxplain.services.user;
 
+import com.illuxplain.dtos.user.UserGetDTO;
 import com.illuxplain.models.user.User;
 import com.illuxplain.repository.user.IUserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,9 +16,18 @@ public class UserServices implements IUserServices, UserDetailsService {
     @Autowired
     private IUserRepository userRepository;
 
+    ModelMapper mapper = new ModelMapper();
+
     @Override
-    public String getUserName() {
-        return null;
+    public UserGetDTO getUserByEmail(String email) {
+        User user = userRepository.findByEmail(email);
+        UserGetDTO userGetDTO =  mapper.map(user, UserGetDTO.class);
+        return userGetDTO;
+    }
+
+    @Override
+    public User getFullUserObjectByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override

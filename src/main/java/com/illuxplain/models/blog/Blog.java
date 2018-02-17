@@ -1,5 +1,7 @@
 package com.illuxplain.models.blog;
 
+import com.illuxplain.models.user.User;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,6 +18,10 @@ public class Blog {
     private String titleContent;
 
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private Date created = new Date();
 
@@ -49,6 +55,14 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getCreated() {

@@ -1,6 +1,9 @@
 package com.illuxplain.services.user;
 
-public interface IUserServices {
+import com.illuxplain.dtos.user.UserGetDTO;
+import com.illuxplain.models.user.User;
 
-    public String getUserName();
+public interface IUserServices {
+    UserGetDTO getUserByEmail(String email);
+    User getFullUserObjectByEmail(String email);
 }

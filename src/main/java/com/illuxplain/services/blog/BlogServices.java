@@ -1,13 +1,17 @@
 package com.illuxplain.services.blog;
 
 import com.illuxplain.dtos.blog.MinBlogDTO;
+import com.illuxplain.dtos.user.UserGetDTO;
 import com.illuxplain.models.blog.Blog;
+import com.illuxplain.models.user.User;
 import com.illuxplain.repository.blog.BlogRepository;
+import com.illuxplain.services.user.IUserServices;
 import com.illuxplain.utils.BlogContentManagement;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +23,9 @@ public class BlogServices implements IBlogServices {
 
     @Autowired
     private BlogContentManagement blogContentManagement;
+
+    @Autowired
+    private IUserServices userServices;
 
     ModelMapper mapper = new ModelMapper();
 
@@ -36,10 +43,13 @@ public class BlogServices implements IBlogServices {
     }
 
     @Override
-    public Blog saveBlog(Blog blog) throws Exception {
+    public Blog saveBlog(Blog blog, Principal principal) throws Exception {
         String title = blog.getTitleContent();
         String alterTitle = blogContentManagement.convertToLowerCaseAndStripeWithDash(title);
         blog.setTitle(alterTitle);
+
+        User user= userServices.getFullUserObjectByEmail(principal.getName());
+        blog.setUser(user);
 
         Blog b = blogRepository.saveAndFlush(blog);
         return b;
