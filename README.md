@@ -1,7 +1,8 @@
 
 # Blog
 
-Clone the code to your repository to get started with your own blog
+Clone the code to your repository to get started with your own blog. 
+Sample hosting url https://illuxplain.herokuapp.com
 
 ## Getting Started
 Make sure you have database installed. In this clone project, we have used PostgreSQL but in case you need another database try adding dependencies in `pom.xml` file and configure recording to your database server settings in `application.properties`
