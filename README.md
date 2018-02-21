@@ -27,4 +27,8 @@ Make sure you have database installed. In this clone project, we have used Postg
 ## Please Note
 This application is under development and it will be keep updating it self in near future. Furthermore, there are known issues and known improvement for this blog
 
-## Current dev branch is not pulled into master, once the development is completed the dev will be merged!
+### In Progress Features
+- Comment and Reply on blog
+- Scripting protection 
+- Blog edit and delete
+- Blog's comment and reply control
