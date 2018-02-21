@@ -1,0 +1,56 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="fragments/head :: head">
+
+    </head>
+
+
+    <body>
+
+    <div th:replace="fragments/nav :: nav"></div>
+    <!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+
+                <!-- Blog Post Content Column -->
+                <div class="col-lg-8">
+
+                    <!-- Blog Post -->
+
+                    <!-- Title -->
+                    <h1 th:text="${blog.titleContent}"></h1>
+
+                    <!-- Author -->
+                    <p class="lead">
+                        by <a href="#" th:text="${blog.user.name}"></a>
+                    </p>
+
+                    <hr>
+
+                    <!-- Date/Time -->
+                    <p>
+                        <span class="glyphicon glyphicon-time">Posted on: </span>
+                        <span th:text="${blog.created}"></span>
+                    </p>
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-responsive" th:src="@{/images/startup.png}" alt="">
+
+                    <hr>
+
+                    <!-- Post Content -->
+                    <div  th:remove="tag" th:utext="${blog.content}"></div>
+
+                    <!-- Posted Comments -->
+                    <div th:replace="fragments/comment :: comment"></div>
+                </div>
+			</div>
+    </div>
+
+    </body>
+
+
+</html>
