@@ -2,7 +2,7 @@ package com.illuxplain.services.user;
 
 import com.illuxplain.dtos.user.UserGetDTO;
 import com.illuxplain.models.user.User;
-import com.illuxplain.repository.user.IUserRepository;
+import com.illuxplain.repository.user.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserServices implements IUserServices, UserDetailsService {
 
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
 
     ModelMapper mapper = new ModelMapper();
 

@@ -1,5 +1,6 @@
 package com.illuxplain.controllers.blog.readers;
 
+import com.illuxplain.exceptions.NotFoundException;
 import com.illuxplain.models.blog.Blog;
 import com.illuxplain.services.blog.IBlogServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,12 @@ public class BlogController {
     public ModelAndView getBlog(@PathVariable String path)
     {
         String blogTitle = path.toLowerCase();
-        Blog blog = blogServices.getBlog(blogTitle);
+        Blog blog = null;
+        try {
+            blog = blogServices.getBlog(blogTitle);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
 
         ModelAndView modelAndView = new ModelAndView("blog");
         modelAndView.addObject("blog", blog);

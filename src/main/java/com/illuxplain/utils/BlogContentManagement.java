@@ -10,7 +10,7 @@ public class BlogContentManagement {
         {
             throw new Exception("Str cannot be null");
         }
-        String s = str.toLowerCase();
+        String s = str.trim().toLowerCase();
         String addDash = s.replaceAll(" ", "-");
         return addDash;
     }
