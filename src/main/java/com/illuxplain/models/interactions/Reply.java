@@ -21,9 +21,6 @@ public class Reply {
 	@Column(name = "reply")
 	private String reply;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Comment comment;
-
 	private String createAt;
 
 	public long getId() {
@@ -48,14 +45,6 @@ public class Reply {
 
 	public void setReply(String reply) {
 		this.reply = reply;
-	}
-
-	public Comment getComment() {
-		return comment;
-	}
-
-	public void setComment(Comment comment) {
-		this.comment = comment;
 	}
 
 	public String getCreateAt() {

@@ -1,19 +1,18 @@
 package com.illuxplain.models.interactions;
 
+import com.illuxplain.models.blog.Blog;
+
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "comment")
 public class Comment {
 	
 	@Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "comment_text")
@@ -23,10 +22,11 @@ public class Comment {
 	private String nameOfCommentor;
 	
 	@Column(name = "created")
-	private long created;
-	
-	@Column(name = "page_id")
-	private String pageID;
+	private Date created = new Date();
+
+	@ManyToOne
+	@JoinColumn(name = "blog_id")
+	private Blog blog;
 
 	@OneToMany
 	@JoinColumn(name = "replies_id")
@@ -62,26 +62,21 @@ public class Comment {
 		this.nameOfCommentor = nameOfCommentor;
 	}
 
-
-	public long getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
-
-	public void setCreated(long created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
-
-	public String getPageID() {
-		return pageID;
+	public Blog getBlog() {
+		return blog;
 	}
 
-
-	public void setPageID(String pageID) {
-		this.pageID = pageID;
+	public void setBlog(Blog blog) {
+		this.blog = blog;
 	}
-
 
 	public List<Reply> getReplies() {
 		return replies;

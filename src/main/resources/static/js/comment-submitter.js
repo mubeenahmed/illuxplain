@@ -7,7 +7,7 @@ $(function(){
 	    $inputs.each(function() {
 	        values[this.name] = $(this).val();
 	    });
-	    $.ajax({ url: base + "add-comment", data: values, method:"POST" }).then(function(data) {
+	    $.ajax({ url: base + "comment/add", data: values, method:"POST" }).then(function(data) {
 	    	$('.comment-submitted').show();
 	    });
 	});

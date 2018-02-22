@@ -11,4 +11,5 @@ public interface IBlogServices {
     Blog getBlog(String title) throws NotFoundException;
     List<MinBlogDTO> getBlogs();
     Blog saveBlog(Blog blog, Principal principal) throws Exception;
+    Blog getBlogById(long id) throws NotFoundException;
 }

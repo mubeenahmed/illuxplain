@@ -61,4 +61,14 @@ public class BlogServices implements IBlogServices {
         Blog b = blogRepository.saveAndFlush(blog);
         return b;
     }
+
+    @Override
+    public Blog getBlogById(long id) throws NotFoundException {
+        Blog blog = blogRepository.findOne(id);
+        if(blog == null)
+            throw new NotFoundException("Blog not found by this id " + id);
+
+
+        return blog;
+    }
 }
