@@ -9,11 +9,11 @@
     <div class="well">
         <p class="comment-submitted" style="display:none">Comment Submitted Successfully!</p>
         <h4>Leave a Comment:</h4>
-        <form id="myForm" method="POST" action="#">
+        <form id="myForm" method="POST" action="/comment/add">
             <input class="form-control" name="nameOfCommentor" placeholder="name" required="required"/>
             <textarea class="form-control" rows="3" name="commentText" required="required"></textarea>
             <input type="submit" class="btn btn-primary" value="submit" />
-            <input type="hidden" value="wel-1" name="pageID" />
+            <input type="hidden" th:value="${blog.id}" name="blog" />
         </form>
     </div>
 
@@ -22,11 +22,11 @@
     <!-- Comment -->
     <div class="media">
         <div class="well">
-            <div th:each="comment: ${commentList}" class="media">
+            <div th:each="comment: ${comments}" class="media">
                 <h4 class="media-heading">
-                    <small><span th:text="${comment.comment_name}"/></small>
+                    <small><span th:text="${comment.nameOfCommentor}"/></small>
                 </h4>
-                <b>Comment</b> :<span th:text="${comment.comment_text}"/>
+                <b>Comment</b> :<span th:text="${comment.commentText}"/>
 
                 <b>Replies</b>
                 <a  pointer="cursor" onclick="openTextBox(this)">Reply</a>
